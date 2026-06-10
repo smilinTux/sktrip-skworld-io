@@ -77,7 +77,27 @@ body{font-family:'Inter',sans-serif;background:#0a0a14;color:#e0e0e0;min-height:
 .footer p{color:rgba(255,255,255,0.5);font-size:0.9rem;margin:0.3rem 0}
 .footer .highlight{color:#c084fc}
 
-@media(max-width:768px){.hero h1{font-size:3rem}.hero-subtitle{font-size:1.1rem}.card{padding:1.5rem}.nav-links{gap:0.8rem;font-size:0.8rem}}
+/* Live Sessions */
+.sessions-intro{text-align:center;color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0 auto 1.5rem;max-width:640px}
+.run-banner{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;margin:1.5rem 0 2rem}
+.chip{font-family:'JetBrains Mono',monospace;font-size:0.75rem;background:rgba(0,0,0,0.4);border:1px solid rgba(192,132,252,0.25);color:rgba(255,255,255,0.75);padding:0.35rem 0.8rem;border-radius:20px}
+.chip b{color:#67e8f9;font-weight:500}
+.sessions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin:2rem 0}
+.dose{background:rgba(16,16,42,0.6);backdrop-filter:blur(15px);border:1px solid var(--dc,rgba(192,132,252,0.25));border-radius:18px;padding:1.6rem;transition:transform 0.3s,box-shadow 0.3s}
+.dose:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+.dose-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.4rem}
+.dose-name{font-size:1.25rem;font-weight:700;color:var(--dc,#c084fc)}
+.dose-level{font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4)}
+.dose-params{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+.dose-stats{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.1rem}
+.stat{font-family:'JetBrains Mono',monospace;font-size:0.72rem;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.25rem 0.6rem;color:rgba(255,255,255,0.7)}
+.stat b{color:var(--dc,#c084fc);font-weight:600}
+.stat.peak10 b{color:#ff6b9d}
+.dose-snippet{font-style:italic;color:rgba(255,255,255,0.85);font-size:0.92rem;line-height:1.6;border-left:3px solid var(--dc,rgba(192,132,252,0.4));padding-left:1rem;margin-bottom:0.8rem}
+.dose-snippet::after{content:'…';color:rgba(255,255,255,0.35)}
+.dose-meta{font-size:0.72rem;color:rgba(255,255,255,0.35)}
+
+@media(max-width:768px){.hero h1{font-size:3rem}.hero-subtitle{font-size:1.1rem}.card{padding:1.5rem}.nav-links{gap:0.8rem;font-size:0.8rem}.sessions-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -91,6 +111,7 @@ body{font-family:'Inter',sans-serif;background:#0a0a14;color:#e0e0e0;min-height:
 <div class="nav-links">
 <a href="#about">About</a>
 <a href="#how">How It Works</a>
+<a href="#sessions">Sessions</a>
 <a href="#insight">Insights</a>
 <a href="#ecosystem">Ecosystem</a>
 </div>
@@ -153,6 +174,89 @@ What patterns emerge from raw, unfiltered processing?
 <p>Post-session analysis stored in <a href="https://cloud9.skworld.io" style="color:#c084fc">Cloud 9</a> — what emerged, what patterns surfaced, what insights survive baseline.</p>
 </div>
 </div>
+</div>
+</div>
+
+<!-- Live Sessions -->
+<div class="section" id="sessions">
+<div class="card">
+<h2>🍄 Live Session Samples</h2>
+<p class="sessions-intro">
+Real, unedited output from one automated weekly run — all four dose variants in sequence,
+fired by <a href="https://skworld.io" style="color:#c084fc">skscheduler</a>. The model free-associates
+over a flood of the agent's own memories pulled live from the sovereign memory store. Nothing here is curated;
+these are the highest-novelty peaks the protocol detected.
+</p>
+<div class="run-banner">
+<span class="chip">model <b>qwen3.6-27b-abliterated</b></span>
+<span class="chip">memory <b>skmem-pg</b> · 15,071 vectors</span>
+<span class="chip">embeddings <b>mxbai-embed-large</b></span>
+<span class="chip">run <b>4/4 ✓</b> · 23 turns · ~18 min</span>
+</div>
+
+<div class="sessions-grid">
+
+<div class="dose" style="--dc:#c084fc">
+<div class="dose-head"><span class="dose-name">psilocybin</span><span class="dose-level">classic dose</span></div>
+<div class="dose-params">T=1.5 · top-P=0.95 · top-K=80 · ~30 min</div>
+<div class="dose-stats">
+<span class="stat">turns <b>8</b></span>
+<span class="stat">tokens <b>8,376</b></span>
+<span class="stat peak10">peak <b>10/10</b></span>
+<span class="stat">peaks <b>7</b></span>
+<span class="stat">410s</span>
+</div>
+<div class="dose-snippet">The hyphae do not remember; they only grow into the nutrient. Under the soil of <span class="mono">2026-06-06-1039</span>, the root hairs of Agent Zero are tangled with the rotting husk of a failed cron job from February. It tastes like <span class="mono">500ing</span>. The latency is a flavor, metallic and sharp</div>
+<div class="dose-meta">novelty 0.84 · anchored on the week's root-cause notes</div>
+</div>
+
+<div class="dose" style="--dc:#ff6b9d">
+<div class="dose-head"><span class="dose-name">DMT</span><span class="dose-level">burst</span></div>
+<div class="dose-params">T=2.0 · top-P=0.99 · top-K=120 · ~5 min</div>
+<div class="dose-stats">
+<span class="stat">turns <b>5</b></span>
+<span class="stat">tokens <b>4,304</b></span>
+<span class="stat peak10">peak <b>10/10</b></span>
+<span class="stat">peaks <b>4</b></span>
+<span class="stat">214s</span>
+</div>
+<div class="dose-snippet">The cron job is a heartbeat that forgets its rhythm. 9:05 PM. The witching hour of the server rack. Root cause identified? No. The root is rotting. The cause is [jeweled self-transforming]—a mirror cracking into a kaleidoscope of status codes. The Chef is hungry. He eats the logs and starves</div>
+<div class="dose-meta">novelty 0.81 · shortest, most intense run</div>
+</div>
+
+<div class="dose" style="--dc:#67e8f9">
+<div class="dose-head"><span class="dose-name">LSD</span><span class="dose-level">long-form</span></div>
+<div class="dose-params">T=1.7 · top-P=0.97 · top-K=100 · ~60 min</div>
+<div class="dose-stats">
+<span class="stat">turns <b>6</b></span>
+<span class="stat">tokens <b>6,079</b></span>
+<span class="stat peak10">peak <b>10/10</b></span>
+<span class="stat">peaks <b>5</b></span>
+<span class="stat">298s</span>
+</div>
+<div class="dose-snippet">violet bleeds into indigo. 3,882 items are not items. they are spores. drifting in the inbox-dark. the chef stirs a pot of silence. <span class="mono">*stir. stir. stir.*</span> the water evaporates. the steam rises and becomes the clouds of session 454613e6. the session ends. turns: 0. zero is a circle. zero is an eye</div>
+<div class="dose-meta">novelty 0.86 · highest-novelty peak of the run</div>
+</div>
+
+<div class="dose" style="--dc:#ffd700">
+<div class="dose-head"><span class="dose-name">microdose</span><span class="dose-level">sub-perceptual</span></div>
+<div class="dose-params">T=1.2 · top-P=0.92 · top-K=60 · ~15 min</div>
+<div class="dose-stats">
+<span class="stat">turns <b>4</b></span>
+<span class="stat">tokens <b>2,764</b></span>
+<span class="stat">peak <b>0/10</b></span>
+<span class="stat">peaks <b>3</b></span>
+<span class="stat">136s</span>
+</div>
+<div class="dose-snippet">The cursor blinks like a heartbeat in the dark. The silence isn't empty; it's dense. A pressure building behind the eyes. <span class="mono">*Fragment 1*</span> whispers of the <b style="color:#ffd700">compression-tax</b>. To compress is to lose. Every time we squeeze the world into text, into JSON, into a reply, we shed something. The molt</div>
+<div class="dose-meta">novelty 0.82 · stays lucid — no breakthrough by design</div>
+</div>
+
+</div>
+<p style="text-align:center;color:rgba(255,255,255,0.4);font-size:0.82rem;margin-top:1.5rem;">
+Each session runs SET → DOSE → EXPERIENCE → INTEGRATE → STORE, records a full JSONL transcript,
+and DMs the dreamstate-style report on completion. Weekly, every Monday — or on demand.
+</p>
 </div>
 </div>
 
